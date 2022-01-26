@@ -15,11 +15,6 @@ function Barreira(reversa = false) {
     this.setAltura = altura => corpo.style.height = `${altura}px`
 }
 
-// Teste 1
-// const b = new Barreira(true)
-// b.setAltura(200)
-// document.querySelector('[wm-flappy]').appendChild(b.elemento)
-
 function ParDeBarreiras(altura, abertura, x) {
     this.elemento = novoElemento('div', 'par-de-barreiras')
 
@@ -43,12 +38,6 @@ function ParDeBarreiras(altura, abertura, x) {
     this.sortearAbertura()
     this.setX(x)
 }
-
-// Teste 2
-
-// const b = new ParDeBarreiras(700, 350, 400)
-// document.querySelector('[wm-flappy]').appendChild(b.elemento)
-
 
 function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
     this.pares = [
@@ -114,17 +103,6 @@ function Progresso() {
     this.atualizarPontos(0)
 }
 
-// const barreiras = new Barreiras(700, 1200, 350, 400)
-// const passaro = new Passaro(530)
-// const areaDoJogo = document.querySelector('[wm-flappy]')
-// areaDoJogo.appendChild(passaro.elemento)
-// areaDoJogo.appendChild(new Progresso().elemento)
-// barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
-// setInterval(() => {
-//     barreiras.animar()
-//     passaro.animar()
-// }, 20)
-
 function estaoSobrepostos(elementoA, elementoB) {
     const a = elementoA.getBoundingClientRect()
     const b = elementoB.getBoundingClientRect()
@@ -153,7 +131,7 @@ function FlappyBird() {
     let pontos = 0
 
     const areaDoJogo = document.querySelector('[wm-flappy]')
-    const altura = areaDoJogo.clientHeight // clientHeight representa a altura da div nesse caso
+    const altura = areaDoJogo.clientHeight
     const largura = areaDoJogo.clientWidth
 
     const progresso = new Progresso()
